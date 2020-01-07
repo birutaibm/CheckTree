@@ -2,6 +2,8 @@ import React from 'react';
 
 import './App.css';
 import CheckTree from './components/CheckTree';
+import If from './components/Logic/If';
+import Map from './components/Logic/Map';
 
 export default function App() {
   const test1 = {
@@ -50,7 +52,11 @@ export default function App() {
 
   return (
     <div className="App">
-      <CheckTree node={test1}/>
+      <If
+        Condition={test1}
+        Then={<CheckTree node={test1}/>}
+        Else={(<h4>Noting to show</h4>)}
+      />
       <button onClick={handleClick}>Log selecteds</button>
     </div>
   );
